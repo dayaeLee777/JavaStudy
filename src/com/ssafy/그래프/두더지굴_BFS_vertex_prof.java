@@ -1,7 +1,6 @@
-package com.ssafy.week2;
+package com.ssafy.그래프;
 
 import java.io.BufferedReader;
-import java.io.FileInputStream;
 import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -13,7 +12,7 @@ public class 두더지굴_BFS_vertex_prof {
 	static int[][] G;
    	static int N;
 	public static void main(String[] args) throws Exception {
-		System.setIn(new FileInputStream("input/p77.txt"));
+//		System.setIn(new FileInputStream("input/p77.txt"));
 		BufferedReader br =new BufferedReader(new InputStreamReader(System.in));
 		N = Integer.parseInt(br.readLine());
 		G = new int[N][N];

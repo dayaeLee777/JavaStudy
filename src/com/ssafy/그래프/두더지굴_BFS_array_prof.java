@@ -1,4 +1,4 @@
-package com.ssafy.week2;
+package com.ssafy.그래프;
 
 import java.io.BufferedReader;
 import java.io.FileInputStream;
