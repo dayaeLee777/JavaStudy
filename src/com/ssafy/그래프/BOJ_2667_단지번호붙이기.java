@@ -42,7 +42,12 @@ public class BOJ_2667_단지번호붙이기 {
 	}
 
 	static void dfs(Vertex v) {
-
+		isVisited[v.x][v.y] = true;
+		for(Vertex a : house) {
+			if(!isVisited[a.x][a.y])
+				
+				dfs(a);
+		}
 	}
 
 	static void bfs(Vertex v) {
