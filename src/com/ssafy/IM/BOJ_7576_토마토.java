@@ -8,7 +8,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-// https://www.acmicpc.net/problem/2605
+// https://www.acmicpc.net/problem/7576
 // BFS 문제
 public class BOJ_7576_토마토 {
 	// res : 결과값 => 토마토가 익는 시간
