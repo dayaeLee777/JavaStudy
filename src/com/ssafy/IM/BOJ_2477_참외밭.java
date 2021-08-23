@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/2477
+// 규칙성 찾기
 public class BOJ_2477_참외밭 {
 	static int res, bingo[][], N;
 	static StringTokenizer st;
