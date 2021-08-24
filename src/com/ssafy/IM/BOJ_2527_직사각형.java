@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.StringTokenizer;
 
-// https://www.acmicpc.net/problem/2477
+// https://www.acmicpc.net/problem/2527
 public class BOJ_2527_직사각형 {
 	static StringTokenizer st;
 	static char res;
