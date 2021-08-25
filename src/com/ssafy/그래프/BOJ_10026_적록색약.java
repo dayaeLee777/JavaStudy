@@ -9,6 +9,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
+// https://www.acmicpc.net/problem/10026
 public class BOJ_10026_적록색약 {
 
 	static int N, result;
@@ -28,8 +29,10 @@ public class BOJ_10026_적록색약 {
 		for (int r = 0; r < N; r++) {
 			map[r] = br.readLine().toCharArray();
 		}
+		
 		bfs();
 		sb.append(result).append(" ");
+		
 		for (int r = 0; r < N; r++) {
 			for (int c = 0; c < N; c++) {
 				if(map[r][c] == 'R')
