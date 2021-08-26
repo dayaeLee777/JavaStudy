@@ -5,11 +5,13 @@ import java.io.BufferedWriter;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
+import java.util.Arrays;
 import java.util.StringTokenizer;
 
-public class BOJ_11728_배열합치기 {
+// https://www.acmicpc.net/problem/10815
+public class BOJ_10815_숫자카드 {
 
-	static int N, M, arrayN[], arrayM[], result[];
+	static int N, M, arrayN[];
 	static StringBuilder sb = new StringBuilder();
 	static StringTokenizer st;
 
@@ -17,27 +19,22 @@ public class BOJ_11728_배열합치기 {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
-		st = new StringTokenizer(br.readLine());
-
-		N = Integer.parseInt(st.nextToken());
-		M = Integer.parseInt(st.nextToken());
-
+		N = Integer.parseInt(br.readLine());
 		arrayN = new int[N];
-		arrayM = new int[M];
-		result = new int[N + M];
 
 		st = new StringTokenizer(br.readLine());
 		for (int n = 0; n < N; n++) {
 			arrayN[n] = Integer.parseInt(st.nextToken());
 		}
 
+		Arrays.sort(arrayN);
+		M = Integer.parseInt(br.readLine());
+
 		st = new StringTokenizer(br.readLine());
 		for (int m = 0; m < M; m++) {
-			arrayM[m] = Integer.parseInt(st.nextToken());
+			int input = Integer.parseInt(st.nextToken());
+			find(input, 0,N);
 		}
-		merge(0, 0);
-		for (int i = 0; i < N + M; i++)
-			sb.append(result[i]).append(" ");
 
 		bw.write(sb.toString());
 
@@ -46,28 +43,21 @@ public class BOJ_11728_배열합치기 {
 		br.close();
 	}
 
-	static void merge(int n, int m) {
-		if (n >= N && m >= M)
+	static void find(int m, int start, int n) {
+		if (n <= 1) {
+			if (arrayN[start] == m)
+				sb.append("1 ");
+			else
+				sb.append("0 ");
 			return;
-
-		else if (n >= N) {
-			result[n + m] = arrayM[m];
-			merge(n, m + 1);
 		}
-
-		else if (m >= M) {
-			result[n + m] = arrayN[n];
-			merge(n + 1, m);
-		}
-
-		else if (arrayN[n] < arrayM[m]) {
-			result[n + m] = arrayN[n];
-			merge(n + 1, m);
+		int nn = (n+1) / 2;
+		if (m >= arrayN[start] && m < arrayN[start + nn]) {
+			find(m, start, nn);
+		} else if (m >= arrayN[start + nn] && m <= arrayN[start+n-1]) {
+			find(m, start + nn, n-nn);
 		} else {
-			result[n + m] = arrayM[m];
-			merge(n, m + 1);
+			sb.append("0 ");
 		}
-
 	}
-
 }
