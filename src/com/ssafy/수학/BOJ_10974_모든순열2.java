@@ -2,9 +2,10 @@ package com.ssafy.수학;
 
 import java.util.Scanner;
 
-// 비트연산 사용
-public class BOJ_10974_모든순열 {
+// boolean 사용
+public class BOJ_10974_모든순열2 {
 	static int N, input[], numbers[];
+	static boolean isSelected[];
 	static StringBuilder sb = new StringBuilder();
 
 	public static void main(String[] args) {
@@ -13,19 +14,20 @@ public class BOJ_10974_모든순열 {
 		N = sc.nextInt();
 		input = new int[N];
 		numbers = new int[N];
+		isSelected = new boolean[N];
 		
 		for(int i=0;i<N;i++) {
 			input[i] = i+1;
 		}
 		
-		permutation(0, 0);
+		permutation(0);
 		
 		System.out.println(sb.toString());
 		sc.close();
 		sc = null;
 	}
 
-	static void permutation(int cnt, int flag) {
+	static void permutation(int cnt) {
 		if (cnt == N) {
 			for(int a : numbers)
 				sb.append(a).append(" ");
@@ -34,10 +36,12 @@ public class BOJ_10974_모든순열 {
 		}
 		
 		for (int i = 0; i < N; i++) {
-			if ((flag & 1 << i) != 0)
+			if (isSelected[i])
 				continue;
 			numbers[cnt]= input[i];
-			permutation(cnt+1, flag | (1<<i));
+			isSelected[i] = true;
+			permutation(cnt+1);
+			isSelected[i] = false;
 		}
 	}
 }
