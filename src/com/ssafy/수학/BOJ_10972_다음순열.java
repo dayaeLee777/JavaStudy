@@ -1,13 +1,9 @@
 package com.ssafy.수학;
 
-import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class BOJ_10972_다음순열 {
-	static int N, input[], numbers[], result[];
-	static boolean isSelected[];
-	static List<int[]> res;
+	static int N, input[];
 	static StringBuilder sb = new StringBuilder();
 
 	public static void main(String[] args) {
@@ -15,12 +11,8 @@ public class BOJ_10972_다음순열 {
 
 		N = sc.nextInt();
 		input = new int[N];
-		numbers = new int[N];
-		result = new int[N];
-		isSelected = new boolean[N];
 		for (int n = 0; n < N; n++) {
 			input[n] = sc.nextInt();
-			numbers[n] = n + 1;
 		}
 		if(permutation(input)) {
 			for(int a : input)
