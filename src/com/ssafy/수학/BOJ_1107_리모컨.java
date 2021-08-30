@@ -42,7 +42,6 @@ public class BOJ_1107_리모컨 {
 		for (int i = 0; i < 10; i++) {
 			if (!bro[i]) {
 				String nRes = res + i;
-//				System.out.println(nRes);
 				int tmp = Math.abs(N - Integer.parseInt(nRes)) + nRes.length();
 				result = result < tmp ? result : tmp;
 				if (idx < 6)
