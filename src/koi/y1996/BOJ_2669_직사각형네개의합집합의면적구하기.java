@@ -1,4 +1,4 @@
-package com.ssafy.수학;
+package koi.y1996;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
