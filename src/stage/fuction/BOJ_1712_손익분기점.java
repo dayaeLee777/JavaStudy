@@ -20,7 +20,7 @@ public class BOJ_1712_손익분기점 {
 		
 		int res = -1;
 		if (C - B > 0)
-			res = (A / (C - B)) > 0 ? (A / (C - B)) + 1 : -1;
+			res = (A / (C - B)) + 1;
 
 		System.out.println(res);
 
