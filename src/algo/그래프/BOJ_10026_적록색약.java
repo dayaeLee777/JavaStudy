@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 // https://www.acmicpc.net/problem/10026
-public class BOJ_10026_적록색약 {
+public class BOJ_10026_적록색약 { 
 
 	static int N, result;
 	static char map[][];
